@@ -26,23 +26,23 @@ dados <- read.csv(drive_download(as_id("https://drive.google.com/file/d/1z8A2Hmn
 
 # Cria um mapping único conectando Cultura + Variável -> Unidade de Medida
 mapeamento_unidades <- dados %>%
-  distinct(Produto.Agrícola, Variável, Unidade.de.Medida) %>%
-  rename(cultura = Produto.Agrícola)
+  distinct(Produto.das.lavouras.temporárias.e.permanentes, Variável, Unidade.de.Medida) %>%
+  rename(cultura = Produto.das.lavouras.temporárias.e.permanentes)
 
 # Tratamento principal do Dataset
 dados_agricolas <- dados %>%
-  mutate(Código.do.Município = as.character(Código.do.Município)) %>%
+  mutate(Município..Código. = as.character(Município..Código.)) %>%
   pivot_wider(
-    id_cols = c(Código.do.Município, Município, Ano, Produto.Agrícola, regional),
+    id_cols = c(Município..Código., Município, Ano, Produto.das.lavouras.temporárias.e.permanentes),
     names_from = Variável,
     values_from = Valor,
     values_fn = list(Valor = mean) 
   ) %>%
   rename(
-    code_muni = Código.do.Município,
+    code_muni = Município..Código.,
     name_muni = Município,
     ano = Ano,
-    cultura = Produto.Agrícola,
+    cultura = Produto.das.lavouras.temporárias.e.permanentes,
     Area = `Área plantada ou destinada à colheita`,
     Producao = `Quantidade produzida`,
     Rendimento = `Rendimento médio da produção`,
