@@ -77,7 +77,9 @@ ui <- page_sidebar(
     ),
     actionButton("reset_zoom", "Ver Estado Inteiro", class = "btn-outline-secondary btn-sm w-100"),
     hr(),
-    markdown("*Fonte: Tabela 5457 PAM IBGE.*")
+    markdown("*Dados: Tabela 5457 PAM IBGE.*"),
+    hr(),
+    markdown("*Autoria: Aline Armanini Stefanan*")
   ),
   
   layout_columns(
