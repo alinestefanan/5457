@@ -17,13 +17,11 @@ geo_rs <- read_municipality(code_muni = "RS", year = 2020, showProgress = FALSE)
   mutate(code_muni = as.character(code_muni)) # Garante tipo caractere para o join
 
 # Carrega o dataframe 
-#dados <- read.csv("tabela5457-25-esreg.csv", header = TRUE, sep = ",", stringsAsFactors = F)
-
-# Desativar autenticação se o link for público, ou siga os passos na tela para logar
+# Desativar autenticação se o link for público
 drive_deauth() 
 
 # Baixar e ler diretamente usando o link original de compartilhamento
-dados <- read.csv(drive_download(as_id("https://drive.google.com/file/d/1pCYmcrxdNKQvpQSWl8wFZF6SjOPwjVQ1/view?usp=sharing"), overwrite = TRUE)$local_path)
+dados <- read.csv(drive_download(as_id("https://drive.google.com/file/d/1z8A2HmndcJY60Op1R_PzOt6FDIxf3Iwu/view?usp=sharing"), overwrite = TRUE)$local_path)
 #head(dados)
 
 # Cria um mapping único conectando Cultura + Variável -> Unidade de Medida
