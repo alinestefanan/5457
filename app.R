@@ -71,7 +71,7 @@ ui <- page_sidebar(
     hr(),
     selectInput(
       inputId = "cidade_selecionada",
-      label = "Escolher cidade ou selecionar no mapa:",
+      label = "Escolha a cidade ou selecione no mapa:",
       choices = cidades_disponiveis,
       selected = cidades_disponiveis[1]
     ),
