@@ -102,7 +102,7 @@ ui <- page_sidebar(
         card_body(
           sliderInput(
             inputId = "ano_mapa_calor",
-            label = "Escolha o ano para mapa da produção:",
+            label = "Escolha o ano para o mapa da produção:",
             min = 2001,   # Será atualizado dinamicamente pelo Server baseando-se no seu arquivo
                   max = 2025,   # Será atualizado dinamicamente pelo Server
                   value = 2025, # Ano padrão inicial
